@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package task;
+
+service TaskService {
+  rpc GetTask (Empty) returns (Task);
+  rpc PostResult (Result) returns (Empty);
+}
+
+message Empty {}
+
+message Task {
+  uint32 id = 1;
+  double arg1 = 2;
+  double arg2 = 3;
+  string operation = 4;
+  int32 op_time = 5;
+}
+
+message Result {
+  uint32 id = 1;
+  double result = 2;
+}
